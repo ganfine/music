@@ -1,30 +1,45 @@
+<script lang="ts" setup>
+// import { onMounted } from 'vue'
+
+// import { sendPageView } from '@/utils/report/pageView'
+// import { useAdsense } from '@/store/adsense'
+
+// const { getCheckIp } = useAdsense()
+
+// getCheckIp()
+
+// onMounted(() => sendPageView())
+
+import PubLoading from '@/components/pub/pubLoading/PubLoading.vue'
+import PubError from '@/components/pub/pubError/PubError.vue'
+import PubTop from './components/pub/pubTop/PubTop.vue'
+
+import { useLoading } from '@/global/loading'
+import { useError } from '@/global/error'
+
+const { loading } = useLoading()
+const { dataError } = useError()
+</script>
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <PubTop></PubTop>
+  <PubError v-if="dataError" :error="dataError" />
+  <template v-else>
+    <PubLoading v-if="loading.length > 0" />
+    <router-view v-slot="{ Component }" :key="$route.name?.toString()">
+      <keep-alive>
+        <component :is="Component" v-if="$route.meta.keepAlive" />
+      </keep-alive>
+      <component :is="Component" v-if="!$route.meta.keepAlive" />
+    </router-view>
+  </template>
 </template>
 
-<style>
+<style scoped lang="less">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  min-width: 320px;
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: #ffffff;
 }
 </style>
