@@ -46,4 +46,7 @@ const currentPage = ref<number>(_page)
   background: #000;
   color: #fff;
 }
+:deep(.van-hairline--surround:after) {
+  border-width: 0;
+}
 </style>

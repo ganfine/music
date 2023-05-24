@@ -6,7 +6,9 @@ import { useRoute } from 'vue-router'
 import { useDetailStore } from '@/store/detail/index'
 import { useRedirect } from '@/hook/route'
 import { storeToRefs } from 'pinia'
+import { sendEvent } from '@/analytics/index'
 
+sendEvent('middlePageView')
 const route = useRoute()
 
 const { toRedirect } = useRedirect()
@@ -24,7 +26,11 @@ fetchDetail(route)
       :published_at="published_at"
       :summary="summary"
       :paragraphs="paragraphs"
-      @click-event="() => toRedirect({ path: 'detail', query: slug })"
+      @click-event="
+        () => {
+          sendEvent('readMoreClick'), toRedirect({ path: 'detail', query: slug })
+        }
+      "
     >
       <template #adsense> <PubAdsense :place="'middle'" :type="'large'" /> </template
     ></MiddleItem>

@@ -45,22 +45,37 @@ const submit = (e: any) => {
 </template>
 <style>
 .search-box {
-  flex: 1;
-  padding: 0 10px 0 28px;
-  width: 230px;
-  height: 30px;
-  border-radius: 5px;
   background-image: url('@/assets/img/search.png');
-  background-size: 12px;
+  flex: 1;
+  padding: 0 10px 0 36px;
+  width: 230px;
+  height: 42px;
+  border-radius: 5px;
+  background-size: 14px;
   background-repeat: no-repeat;
-  background-position: left 10px top 9px;
-  border: 1px #b9b9b9 solid;
+  background-position: left 16px top 14px;
+  border: 0 solid #b9b9b9;
   box-sizing: border-box;
   outline: none;
-  font-size: 12px;
+  font-size: 14px;
   font-family: Lato-Regular, Lato;
   font-weight: 400;
+  color: #1c1d23;
+  line-height: 14px;
+}
+input::input-placeholder {
   color: #8c98b2;
-  line-height: 12px;
+}
+input::-webkit-input-placeholder {
+  color: #8c98b2;
+}
+input::-moz-placeholder {
+  color: #8c98b2;
+}
+input::-moz-placeholder {
+  color: #8c98b2;
+}
+input::-ms-input-placeholder {
+  color: #8c98b2;
 }
 </style>

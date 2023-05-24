@@ -42,7 +42,7 @@ const closeMenu = () => {
   bottom: 0;
   left: 54%;
   background-color: #000000;
-  opacity: 80%;
+  opacity: 90%;
   z-index: 99;
 
   .menu-list {

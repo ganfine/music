@@ -32,6 +32,7 @@ declare module '@vue/runtime-core' {
     PubNews: typeof import('./src/components/pub/pubNews/PubNews.vue')['default']
     PubPagination: typeof import('./src/components/pub/pubPagination/PubPagination.vue')['default']
     PubSearch: typeof import('./src/components/pub/pubSearch/PubSearch.vue')['default']
+    PubShareBar: typeof import('./src/components/pub/pubShareBar/PubShareBar.vue')['default']
     PubTop: typeof import('./src/components/pub/pubTop/PubTop.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

@@ -1,4 +1,5 @@
 import { feedbackRequest } from '../index'
+import { JSONStringify } from '@/utils/jsonStr'
 
 const sendFeedbackRequest = (params: any) =>
   feedbackRequest.post({
@@ -9,7 +10,7 @@ const sendFeedbackRequest = (params: any) =>
 const sendUserInfoRequest = (data: any) =>
   feedbackRequest.post({
     url: 'https://api.sve.cc/stat/post',
-    data: JSON.stringify(data)
+    data: JSONStringify(data)
   })
 
 export { sendFeedbackRequest, sendUserInfoRequest }

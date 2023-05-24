@@ -47,19 +47,19 @@ onMounted(() => geTaboola())
 
 <template>
   <template v-if="place === 'list'">
-    <TaboolaAds v-if="taboolaList.length > 0 && allow" :type="type" :adsenses="taboolaList" />
+    <TaboolaAds v-if="taboolaList.length > 0 && allow" :type="type" :adsenses="taboolaList" :palce="'list'" />
     <div v-if="googleStatus === 'fill'">
       <GoogleAds :ca-pub="ca_pub" :ads-slot="list" :full-width="true" @ad-status="getAdStatus" />
     </div>
   </template>
   <template v-if="place === 'detail'">
-    <TaboolaAds v-if="taboolaList.length > 0 && allow" :type="type" :adsenses="taboolaList" />
+    <TaboolaAds v-if="taboolaList.length > 0 && allow" :type="type" :adsenses="taboolaList" :palce="'detail'" />
     <div v-if="googleStatus === 'fill'">
       <GoogleAds :ca-pub="ca_pub" :ads-slot="detail" :full-width="true" @ad-status="getAdStatus" />
     </div>
   </template>
   <template v-if="place === 'middle'">
-    <TaboolaAds v-if="taboolaList.length > 0 && allow" :type="type" :adsenses="taboolaList" />
+    <TaboolaAds v-if="taboolaList.length > 0 && allow" :type="type" :adsenses="taboolaList" :palce="'middle'" />
     <div v-if="googleStatus === 'fill'">
       <GoogleAds :ca-pub="ca_pub" :ads-slot="middle" :full-width="true" @ad-status="getAdStatus" />
     </div>

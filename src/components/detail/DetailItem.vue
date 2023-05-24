@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import PubShareBar from '../pub/pubShareBar/PubShareBar.vue'
 import { useToback } from '@/hook/route'
 import { IParagraph } from '@/types/articleDetail/index'
 
@@ -24,17 +25,17 @@ const { toBack } = useToback(-2)
       {{ title }}
     </div>
     <div class="title-time">{{ author }} <strong>·</strong> {{ published_at }}</div>
-    <!-- <div class="cover" v-if="summary">
-      <img :src="cover" alt="cover" />
-    </div> -->
-    <!-- <div class="cover-time" v-if="summary">{{ author }} <strong>·</strong> {{ published_at }}</div> -->
     <slot name="adsense" v-if="summary"></slot>
     <div class="section" v-if="summary">{{ summary }}</div>
     <ul>
       <li v-for="item in paragraphs" :key="item.id">
+        <div class="heading">{{ item.heading }}</div>
         <div class="cover"><img :src="item.image" alt="image" /></div>
         <div class="cover-via">
           <a :href="item.url">{{ item.via }}</a>
+        </div>
+        <div class="share">
+          <PubShareBar :image="item.image" :title="(title as string)" :index="item.index"></PubShareBar>
         </div>
         <slot name="adsense"></slot>
         <div class="section">
@@ -56,28 +57,39 @@ const { toBack } = useToback(-2)
   margin: 10px 0 17.5px 0;
 }
 .title {
-  font-size: 24px;
+  font-size: 28px;
   font-family: Poppins;
   color: #1c1d23;
-  line-height: 27px;
+  line-height: 28px;
   font-weight: bold;
 }
 .title-time {
   margin: 10px 0 21px 0;
-  font-size: 14px;
+  font-size: 15px;
   font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   color: #888888;
   line-height: 12px;
 }
+.heading {
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: Poppins;
+  color: #1c1d23;
+  line-height: 27px;
+  font-weight: bold;
+}
 .cover {
   width: 100%;
-  // height: 211px;
+
   margin-top: 15px;
   border-radius: 6px;
   img {
     border-radius: 6px;
   }
+}
+.share {
+  margin: 0 0 10px 2px;
 }
 .cover-time {
   margin: 5px 0 12px 0;
@@ -88,7 +100,7 @@ const { toBack } = useToback(-2)
   line-height: 10px;
 }
 .cover-via {
-  margin: 5px 0 12px 0;
+  margin: 0 0 10px 0;
   a {
     text-decoration: none;
     font-size: 11px;
@@ -99,7 +111,7 @@ const { toBack } = useToback(-2)
   }
 }
 .section {
-  font-size: 14px;
+  font-size: 15px;
   font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   color: #0d0d0d;

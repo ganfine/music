@@ -27,7 +27,6 @@ const sendAdsRequest = (placement: any) => {
     // 以下共有
     type: 'call',
     pid: taboolaConfig.channel,
-    // pid: '',
     uid: getUserId(180),
     dm: window.location.host,
     qs: window.location.pathname + window.location.search + window.location.hash,

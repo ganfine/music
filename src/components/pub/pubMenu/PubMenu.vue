@@ -36,7 +36,7 @@ const clickEvent = (name: string) => emits('clickEvent', name)
 .menu-toggle {
   background-image: url('@/assets/img/menu.png');
   background-size: 100%;
-  // background-position: top -10px left -6px;
+
   width: 23px;
   height: 23px;
   transition: all 0.4s linear;

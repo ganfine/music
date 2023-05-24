@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import PubShareBra from '@/components/pub/pubShareBar/PubShareBar.vue'
 import { useToback } from '@/hook/route'
 import { IParagraph } from '@/types/articleDetail/index'
 
@@ -24,6 +25,9 @@ const { toBack } = useToback(-1)
     <img src="@/assets/img/toback.png" alt="toback" />
   </div>
   <img class="cover" :src="cover" /><img />
+  <div class="share">
+    <PubShareBra :image="cover" :title="(title as string)" :index="0"></PubShareBra>
+  </div>
   <div class="title">
     {{ title }}
   </div>
@@ -61,6 +65,9 @@ const { toBack } = useToback(-1)
   width: 100%;
   // height: 211px;
   border-radius: 12px;
+}
+.share {
+  margin: 10px 0 0 2px;
 }
 .cover-time {
   margin: 5px 0 12px 0;
@@ -101,5 +108,6 @@ hr {
   height: 4px;
   background: #000000;
   opacity: 0.06;
+  border: 0 solid #000;
 }
 </style>

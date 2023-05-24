@@ -9,6 +9,7 @@ import { gatgConfig } from '@/config'
 
 import 'normalize.css'
 import '@/assets/css/reset.less'
+import '@/assets/css/font.less'
 
 const app = createApp(App)
 const pinia = createPinia()

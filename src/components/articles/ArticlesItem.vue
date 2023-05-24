@@ -22,8 +22,6 @@ defineEmits<IEmits>()
       {{ article.published_at }}
     </div>
     <span class="item-title">{{ article.title }}</span>
-
-    <hr />
   </div>
 </template>
 
@@ -31,8 +29,8 @@ defineEmits<IEmits>()
 .item-title {
   white-space: normal;
   font-size: 22px;
-  font-weight: bold;
-  font-family: Poppins;
+  font-weight: 800;
+  font-family: Poppins-Bold;
   color: #1c1d23;
   line-height: 27px;
   overflow: hidden;
@@ -42,14 +40,11 @@ defineEmits<IEmits>()
   -webkit-box-orient: vertical;
 }
 .item-time {
-  padding: 12px 0 5px 0;
-  font-size: 12px;
+  padding: 10px 0 5px 0;
+  font-size: 14px;
   font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   color: #888888;
-  line-height: 12px;
-}
-hr {
-  margin: 30px 0 16px 0;
+  line-height: 14px;
 }
 </style>

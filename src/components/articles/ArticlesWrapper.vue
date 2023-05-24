@@ -27,15 +27,18 @@ onBeforeRouteUpdate((to) => {
       <li v-if="(total || 0) <= 0" class="no-data" @click="toHome()">No data found, click back to home page</li>
       <li v-for="item in list" :key="item.id">
         <ArticlesItem :article="item" @click-event="(value) => toRedirect({ path: 'Middle', query: value })" />
+        <hr />
         <PubAdsense :place="'list'" v-if="(item.index || 1) % 3 == 0" :type="'large'"></PubAdsense>
         <hr v-if="(item.index || 1) % 3 == 0" />
       </li>
     </ul>
-    <PubPagination
-      :list="10"
-      :total="total"
-      @change-event="(page) => toRedirect({ path: 'category', query: route.params.value as string, page })"
-    ></PubPagination>
+    <div class="pagination">
+      <PubPagination
+        :list="10"
+        :total="total"
+        @change-event="(page) => toRedirect({ path: 'category', query: route.params.value as string, page })"
+      ></PubPagination>
+    </div>
   </div>
 </template>
 <style scoped lang="less">
@@ -46,6 +49,14 @@ onBeforeRouteUpdate((to) => {
   }
 }
 hr {
-  margin: 16px 0;
+  border: 0px solid #1c1d23;
+  margin: 16px 0 19px 0;
+  opacity: 10%;
+  height: 0.5px;
+  background-color: #1c1d23;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
 }
 </style>

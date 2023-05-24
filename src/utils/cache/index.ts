@@ -1,12 +1,14 @@
+import { JSONStringify, JSONParse } from '../jsonStr'
+
 class LocalCache {
   setLocalCache(key: string, value: any) {
-    window.localStorage.setItem(key, JSON.stringify(value))
+    window.localStorage.setItem(key, JSONStringify(value))
   }
 
   getLocalCache(key: string) {
     const value = window.localStorage.getItem(key)
     if (value) {
-      return JSON.parse(value)
+      return JSONParse(value)
     }
   }
 
@@ -21,13 +23,13 @@ class LocalCache {
 
 class SessionCache {
   setSessionCache(key: string, value: any) {
-    window.sessionStorage.setItem(key, JSON.stringify(value))
+    window.sessionStorage.setItem(key, JSONStringify(value))
   }
 
   getSessionCache(key: string) {
     const value = window.sessionStorage.getItem(key)
     if (value) {
-      return JSON.parse(value)
+      return JSONParse(value)
     }
   }
 

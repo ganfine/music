@@ -49,7 +49,7 @@ defineProps<IProps>()
         flex: 1;
       }
       .img {
-        flex: 0 0 40%;
+        flex: 0 0 120px;
       }
     }
     .sponsored {

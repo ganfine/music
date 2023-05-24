@@ -25,7 +25,7 @@ a {
 }
 .footer {
   width: 100%;
-  height: 138px;
+  height: 150px;
   background-color: #161616;
   padding-top: 34px;
   margin-top: 20px;
@@ -54,7 +54,7 @@ a {
     color: #fff;
     opacity: 0.5;
     padding: 0 23px;
-    margin-top: 22px;
+    margin-top: 8px;
   }
 }
 </style>

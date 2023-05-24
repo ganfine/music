@@ -40,9 +40,11 @@ const { taboolaList } = storeToRefs(taboolaStore)
   }
 }
 hr {
-  height: 0.5px;
-  opacity: 0.15;
-  border: 0.5px solid #1c1d23;
   margin: 15px 0;
+  border: 0px solid #1c1d23;
+  margin: 16px 0 19px 0;
+  opacity: 10%;
+  height: 0.5px;
+  background-color: #1c1d23;
 }
 </style>

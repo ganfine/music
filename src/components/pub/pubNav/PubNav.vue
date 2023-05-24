@@ -20,6 +20,13 @@ defineEmits<IEmits>()
     <div class="cateory-wrapper">
       <ul class="cateory-list">
         <li
+          class="cateory-list-item"
+          @click="$emit('clickEvent', 'home')"
+          :class="{ active: $route.params.value === 'home' }"
+        >
+          All
+        </li>
+        <li
           v-for="item in categories"
           :key="item.sub"
           :class="{ active: $route.params.value === item.sub }"
@@ -61,10 +68,10 @@ defineEmits<IEmits>()
   margin-right: 20px;
   display: inline-block;
   height: 15px;
-  font-size: 16px;
+  font-size: 18px;
   font-family: HelveticaNeue;
   color: #1f1f1f;
-  line-height: 15px;
+  line-height: 16px;
   opacity: 0.7;
 }
 

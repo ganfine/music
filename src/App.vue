@@ -1,14 +1,16 @@
 <script lang="ts" setup>
-// import { onMounted } from 'vue'
+import { onMounted } from 'vue'
 
-// import { sendPageView } from '@/utils/report/pageView'
-// import { useAdsense } from '@/store/adsense'
+import { sendPageView } from '@/utils/report/pageView'
+import { useAdsense } from '@/store/adsense'
+import { sendEvent } from '@/analytics/index'
 
-// const { getCheckIp } = useAdsense()
+const { getCheckIp } = useAdsense()
 
-// getCheckIp()
+getCheckIp()
+sendEvent('pageView')
 
-// onMounted(() => sendPageView())
+onMounted(() => sendPageView())
 
 import PubLoading from '@/components/pub/pubLoading/PubLoading.vue'
 import PubError from '@/components/pub/pubError/PubError.vue'

@@ -1,5 +1,6 @@
 import { sendGet } from '@/utils/general'
 import { ITaboola } from '@/types/taboola'
+import { sendAdsRequest } from '@/utils/report/adsRequest'
 
 export const formatPlacements = function (placements: any[]) {
   const adsList = []
@@ -8,6 +9,8 @@ export const formatPlacements = function (placements: any[]) {
     if (placement.list.length > 0) {
       sendGet(placement.events.visible)
       adsList.push(...placement.list)
+      // 监听
+      sendAdsRequest(placement)
     }
   }
   return {

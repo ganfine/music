@@ -7,6 +7,7 @@ interface IParagraph {
   via: string
   content: string
   contents?: string[]
+  index?: number
   url: string
 }
 

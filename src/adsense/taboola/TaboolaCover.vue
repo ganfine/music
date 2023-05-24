@@ -49,7 +49,7 @@ defineProps<IProps>()
       font-weight: 400;
       color: #888888;
       line-height: 12px;
-      padding: 12px 0;
+      padding: 12px 0 4px 0;
     }
 
     .title,

@@ -17,12 +17,9 @@
 </template>
 <style scoped lang="less">
 .headerWrapper {
-  // width: 750px;
   width: 100%;
   height: 270px;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
+
   align-items: center;
   box-sizing: border-box;
   background-image: url(@/assets/img/banner.webp);
@@ -61,10 +58,10 @@
   margin-bottom: 15px;
 }
 .search {
-  height: 30px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: Center;
-  padding: 0 17%;
+  padding: 0 12%;
 }
 </style>

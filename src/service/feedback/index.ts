@@ -7,7 +7,7 @@ const feedbackRequest = new VendeRequest({
   interceptors: {
     request_interceptor: (config) => config,
     request_interceptor_catch: (err) => err,
-    response_interceptor: (res) => res,
+    response_interceptor: (res) => res.data,
     response_interceptor_catch: (err) => err
   }
 })

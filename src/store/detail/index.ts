@@ -30,6 +30,7 @@ const useDetailStore = defineStore('detail', {
           via: '',
           content: '',
           contents: [],
+          index: 0,
           url: ''
         }
       ]
@@ -50,13 +51,13 @@ const useDetailStore = defineStore('detail', {
         this.summary = res.data.summary
         this.published_at = getTimeStr(parseInt(res.data.published_at))
         this.paragraphs = res.data.paragraphs
-        for (let i = 0; i <= this.paragraphs.length; i++) {
+        for (let i = 0; i < this.paragraphs.length; i++) {
+          this.paragraphs[i].index = i
           if (this.paragraphs[i]?.content) {
             this.paragraphs[i].contents = replaceStr(this.paragraphs[i].content.replace(/(^"|"$)/g, ''), {
               '\\n': '---',
               '\\"': '"',
               '""': '"',
-              // '"': '',
               '\\t': ''
             }).split(/-{3,}/)
           }
